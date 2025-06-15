@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: segundo-rey-web
+    name: segundo-rey-demo
     env: node
     plan: free
     buildCommand: |
@@ -19,7 +19,7 @@ services:
       - key: LOGIN_PASS
         value: 1234
       - key: FRONTEND_URL
-        value: https://segundo-rey-web.onrender.com
+        value: https://segundo-rey-demo.onrender.com
       - key: DB_HOST
         value: jupiter.tropicalserver.net
     autoDeploy: true
