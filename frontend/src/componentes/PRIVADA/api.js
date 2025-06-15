@@ -1,5 +1,6 @@
 
 import axios from 'axios';
+import '../../styles/api.css';
 
 const isDemo = true;
 
