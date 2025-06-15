@@ -57,11 +57,11 @@ app.post('/contacto', async (req, res) => {
   }
 
   const transporter = nodemailer.createTransport({
-    host: 'mail.segundorey.com',
+    host: 'mail.demo.com',
     port: 465,
     secure: true,
     auth: {
-      user: 'info@segundorey.com',
+      user: 'info@demo.com',
       pass: process.env.EMAIL_PASS
 
     },
@@ -72,7 +72,7 @@ app.post('/contacto', async (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'info@segundorey.com',
+    to: 'info@demo.com',
     subject: `📩 Nuevo contacto desde web de ${nombre}`,
     text: `
 📨 Nombre: ${nombre}
@@ -103,13 +103,12 @@ app.post('/trabajaConNosotros', upload.single('cv'), async (req, res) => {
     return res.status(400).send('No se adjuntó ningún archivo.');
   }
 
-  const transporter = nodemailer.createTransport({
-
-    host: 'mail.segundorey.com',
+   const transporter = nodemailer.createTransport({
+    host: 'mail.demo.com',
     port: 465,
     secure: true,
     auth: {
-      user: 'info@segundorey.com',
+      user: 'info@demo.com',
       pass: process.env.EMAIL_PASS
 
     },
@@ -120,7 +119,7 @@ app.post('/trabajaConNosotros', upload.single('cv'), async (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'info@segundorey.com',
+    to: 'info@demo.com',
     subject: `CV desde web: ${nombre} ${apellidos}`,
     text: `
     Curriculum recibido:
@@ -213,11 +212,11 @@ app.post('/enviar-confirmacion', async (req, res) => {
     const emailVendedor = vendedorRows[0]?.email;
 
     const transporter = nodemailer.createTransport({
-      host: 'mail.segundorey.com',
+      host: 'mail.demo.com',
       port: 465,
       secure: true,
       auth: {
-        user: 'info@segundorey.com',
+        user: 'info@demo.com',
         pass: process.env.EMAIL_PASS
       },
       tls: {
@@ -242,7 +241,7 @@ Segundo Rey`;
     await transporter.sendMail({
       from: process.env.EMAIL_FROM,
       to: email,
-      subject: "Confirmación de Cita Segundo Rey",
+      subject: "Confirmación de demo",
       text: mensaje
     });
 
@@ -446,11 +445,11 @@ app.post('/datos-sabado', async (req, res) => {
     );
 
     const transporter = nodemailer.createTransport({
-      host: 'mail.segundorey.com',
+      host: 'mail.demo.com',
       port: 465,
       secure: true,
       auth: {
-        user: 'info@segundorey.com',
+        user: 'info@demo.com',
         pass: process.env.EMAIL_PASS
       },
       tls: {
@@ -461,7 +460,7 @@ app.post('/datos-sabado', async (req, res) => {
     await transporter.sendMail({
       from: process.env.EMAIL_FROM,
       to: email,
-      subject: "Confirmación de Cita Segundo Rey",
+      subject: "Confirmación de Cita demo",
       text: `Hola ${nombre},
 
 Gracias por reservar su cita.
