@@ -17,25 +17,13 @@ export default function AgendaPrincipal() {
   const hoy = new Date();
   const location = useLocation();
 
-//para uso de github
-useEffect(() => {
+  // Cargar vendedores y vacaciones
+  useEffect(() => {
     getVendedores().then(res => setVendedores(res.data));
     getVacaciones().then(res => setVacaciones(res.data));
   }, []);
 
-
-  useEffect(() => {
-    axios.get(`${API}/vendedores`)
-      .then(res => setVendedores(res.data))
-      .catch(err => console.error("Error cargando vendedores:", err));
-  }, []);
-
-  useEffect(() => {
-    axios.get(`${API}/vacaciones`)
-      .then(res => setVacaciones(res.data))
-      .catch(err => console.error("Error cargando vacaciones:", err));
-  }, []);
-
+  // Cargar citas cuando cambia el vendedor o se recarga la página
   useEffect(() => {
     if (vendedorId) {
       axios
@@ -45,6 +33,7 @@ useEffect(() => {
     }
   }, [vendedorId, location.key]);
 
+  // Verifica si una fecha está en vacaciones
   const estaDeVacaciones = (fecha) => {
     const fechaActual = new Date(fecha);
     fechaActual.setHours(0, 0, 0, 0);
@@ -82,7 +71,9 @@ useEffect(() => {
       >
         <option value="">Selecciona uno</option>
         {vendedores.map(v => (
-          <option key={v.id} value={v.id}>{v.nombre}</option>
+          <option key={v.id} value={v.id}>
+            {v.nombre}
+          </option>
         ))}
       </select>
 
