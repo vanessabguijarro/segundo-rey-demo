@@ -149,13 +149,13 @@ app.post('/trabajaConNosotros', upload.single('cv'), async (req, res) => {
 //PARA PRUEBA DE LOS SELECCIONADORES
 // DEMO: Obtener lista de vendedores desde JSON
 app.get('/demo/vendedores', (req, res) => {
-  const data = fs.readFileSync(path.join(__dirname, 'mock-vendedores.json'));
+  const data = fs.readFileSync(path.join(__dirname, 'vendedores.json'));
   res.json(JSON.parse(data));
 });
 
 // DEMO: Obtener vacaciones desde JSON
 app.get('/demo/vacaciones', (req, res) => {
-  const data = fs.readFileSync(path.join(__dirname, 'mock-vacaciones.json'));
+  const data = fs.readFileSync(path.join(__dirname, 'vacaciones.json'));
   res.json(JSON.parse(data));
 });
 
