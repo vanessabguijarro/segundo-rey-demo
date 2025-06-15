@@ -8,6 +8,7 @@ import connection from './database.js';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 
+
 dotenv.config();
 
 const app = express();
@@ -31,8 +32,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-
-
 // LOGIN
 
 app.post('/login', (req, res) => {

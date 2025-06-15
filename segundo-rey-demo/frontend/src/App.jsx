@@ -11,6 +11,7 @@ import CookieConsent from "react-cookie-consent";
 import { useEffect } from "react"; // 👈 Asegúrate de importar esto
 
 export default function App() {
+  
   // 👇 Este useEffect hace la redirección automática de HTTP a HTTPS
   useEffect(() => {
     if (window.location.protocol === "http:") {
