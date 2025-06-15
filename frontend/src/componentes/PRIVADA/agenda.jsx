@@ -4,6 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../../styles/privada.agenda.css';
+import { getVendedores, getVacaciones } from './api.js';
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -15,6 +16,13 @@ export default function AgendaPrincipal() {
   const navigate = useNavigate();
   const hoy = new Date();
   const location = useLocation();
+
+//para uso de github
+useEffect(() => {
+    getVendedores().then(res => setVendedores(res.data));
+    getVacaciones().then(res => setVacaciones(res.data));
+  }, []);
+
 
   useEffect(() => {
     axios.get(`${API}/vendedores`)

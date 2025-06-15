@@ -1,0 +1,4 @@
+[
+  { "id": 1, "vendedor_id": 1, "fecha_inicio": "2025-06-20", "fecha_fin": "2025-06-25" },
+  { "id": 2, "vendedor_id": 2, "fecha_inicio": "2025-07-01", "fecha_fin": "2025-07-05" }
+]
