@@ -9,7 +9,7 @@ services:
     startCommand: node backend/server.js
     envVars:
       - key: NODE_VERSION
-        value: 22
+        value: 18
       - key: EMAIL_FROM
         value: info@demo.com
       - key: EMAIL_PASS
