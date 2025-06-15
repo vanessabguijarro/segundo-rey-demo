@@ -5,8 +5,8 @@ services:
     plan: free
     buildCommand: |
       cd frontend && npm install && npm run build
-    startCommand: |
-      cd backend && npm install && node server.js
+      cd ../backend && npm install
+    startCommand: node backend/server.js
     envVars:
       - key: NODE_VERSION
         value: 22
@@ -22,6 +22,4 @@ services:
         value: https://segundo-rey-web.onrender.com
       - key: DB_HOST
         value: jupiter.tropicalserver.net
-       
     autoDeploy: true
-
