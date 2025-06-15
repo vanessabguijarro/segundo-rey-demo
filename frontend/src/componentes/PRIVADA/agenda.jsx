@@ -4,7 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../../styles/privada.agenda.css';
-import { getVendedores, getVacaciones } from './api.js';
+import { getVendedores, getVacaciones } from './api';
 
 const API = import.meta.env.VITE_API_URL;
 
